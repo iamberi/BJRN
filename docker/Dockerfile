@@ -6,6 +6,7 @@ WORKDIR /var/www
 
 # Install packages.
 RUN apt-get update && apt-get install --no-install-recommends --yes \
+    dos2unix \
     libicu-dev \
     npm \
     unzip
@@ -24,3 +25,6 @@ RUN php composer-installer.php --install-dir=/usr/local/bin --filename=composer 
 
 # Copy project setup script.
 COPY setup-project.sh /usr/local/bin/setup-project
+
+# Convert line endings.
+RUN dos2unix /usr/local/bin/setup-project
