@@ -18,14 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <a class="navbar-brand" href="{{ url('/') }}"> {{ config('app.name', 'Laravel') }}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,7 +34,7 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                           <li class="nav-item">
-                              <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                              <a class="nav-link" href="{{ route('backend.index') }}">{{ __('Backend') }}</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="{{ route('test') }}">{{ __('Test') }}</a>
@@ -58,7 +57,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} ({{ Auth::user()->roles()->first()->description }}) <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -80,7 +79,25 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+        @yield('content')
+            <div class="container">
+                <div class="row">
+                    @auth
+                        <div class="col sidebar d-none d-md-block">
+                            <div class="card">
+                                <div class="card-header">Navigation</div>
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action"> Aktion 1 </a>
+                                    <a href="#" class="list-group-item list-group-item-action"> Aktion 2 </a>
+                                    <a href="#" class="list-group-item list-group-item-action"> Aktion 3 </a>
+                                    <a href="#" class="list-group-item list-group-item-action"> Aktion 4 </a>
+                                    <a href="#" class="list-group-item list-group-item-action"> Aktion 5 </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endauth
+                </div>
+            </div>
         </main>
     </div>
 </body>

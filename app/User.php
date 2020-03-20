@@ -49,14 +49,14 @@ class User extends Authenticatable
      * überprüft mehrere Rollen
      */
     public function hasAnyRole($roles){
-        return null !== $this->roles()->whereIn($roles)->first();
+        return null !== $this->roles()->whereIn('name', $roles)->first();
     }
 
      /**
      * überprüft eine Rolle
      */
     public function hasRole($roles){
-        return null !== $this->roles()->where($roles)->first();
+        return null !== $this->roles()->where('name', $roles)->first();
     }
 
 
