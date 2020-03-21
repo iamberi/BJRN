@@ -17,7 +17,7 @@ class CheckRole
     public function handle($request, Closure $next, ...$role)
     {
         if (! $request->user()->authorizeRoles($role)) {
-            // Redirect...
+            abort(401,'Sie sind zu dieser Aktion nicht berechtigt.');
         }
 
         return $next($request);
