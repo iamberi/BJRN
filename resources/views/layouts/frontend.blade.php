@@ -55,9 +55,9 @@
                                 </li>
                             @endif
                         @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}">Artikelübersicht</a>
-                                </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.index') }}">Admin-Bereich</a>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} ({{ Auth::user()->roles()->first()->description }}) <span class="caret"></span>
@@ -82,12 +82,12 @@
         </nav>
 
         <main class="py-4">
-        @yield('content')
+
             <div class="container">
                 <div class="row">
-                    @auth
-                        @include('backend.navigation')
-                    @endauth
+                    <div class="col-md-12 ml-auto">
+                        @yield('content')
+                    </div>
                 </div>
             </div>
         </main>
