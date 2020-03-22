@@ -7,7 +7,7 @@ composer install
 
 # Generate application key and database.
 php artisan key:generate
-php artisan migrate
+php artisan migrate:fresh --seed
 
 # Install Node.js dependencies and compile assets.
 npm install

@@ -1,8 +1,9 @@
 /node_modules
+/public/css
 /public/hot
+/public/js
 /public/storage
 /storage/*.key
-/storage/database
 /vendor
 .DS_Store
 .env
