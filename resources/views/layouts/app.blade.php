@@ -82,12 +82,17 @@
         </nav>
 
         <main class="py-4">
-        @yield('content')
             <div class="container">
                 <div class="row">
                     @auth
                         @include('backend.navigation')
                     @endauth
+
+                    <div class="col-md">
+                    @include('partials.message')
+                    @yield('content')
+                    </div>
+
                 </div>
             </div>
         </main>
