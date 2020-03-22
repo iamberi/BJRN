@@ -3,7 +3,7 @@ services:
   database:
     image: mysql:5.7
     volumes:
-      - /var/lib/mysql
+      - database:/var/lib/mysql
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=laravel
@@ -23,3 +23,6 @@ services:
       - 80:80
     depends_on:
       - app
+
+volumes:
+  database:
