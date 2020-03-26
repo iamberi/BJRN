@@ -2,10 +2,19 @@
 
 @section('content')
 <div class="card mb-2">
-    <div class="card-header"><h1>{{$article->article}}</h1></div>
+    <div class="card-header"><h1>{{$article->article}}</h1>
+    </div>
         <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <small>{{__('Author')}}: {{$article->user->name}} </small>
+            </div>
+            <div class="col-md-6 text-right">
+                <strong>{{__('Price')}}: {{$article->price}}</strong>
+            </div>
+            <hr>
             {{$article->description}}
-            {{$article->price}}
+        </div>   
         </div>
 </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ArticleController extends Controller
 {
@@ -67,7 +68,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view ('article.edit', compact('article'));
     }
 
     /**
@@ -77,9 +78,17 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Article $article)
     {
-        //
+        $data = $this->validate(request(), [
+            'article' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+
+        $article->update(request()->except('_token'));
+        Session::flash('message','Artikel erolgreich bearbeitet!');
+        return redirect(route('article.index'));
     }
 
     /**

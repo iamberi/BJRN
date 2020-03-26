@@ -13,6 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
+    <script src="https://kit.fontawesome.com/24f7cd9cfb.js" crossorigin="anonymous"></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
