@@ -17,7 +17,7 @@
     <div class="card-body">
         <form action="{{route('article.update', $article->id)}}" method="post">
         @csrf
-        @method('PUt')
+        @method('PUT')
 
             <div class="form-group">
                 <label for="article">Artikel Bezeichnung</label>

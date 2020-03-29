@@ -16,3 +16,5 @@ Route::get('/test', 'TestController@index')->name('test');
 Route::resources([
     'article'=>'ArticleController'
 ]);
+
+Route::get('/delete/{article}','ArticleController@delete')->name('article.delete');

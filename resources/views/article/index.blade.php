@@ -40,7 +40,7 @@
                     <div class="btn-group btn-group-sm">
                         <a href="{{route('article.edit', $article->id)}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-fw fa-pencil-alt"></i></a>
                         <a href="{{route('frontend.show', $article->id)}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-fw fa-eye"></i></a>
-                        <a href='#' class="btn btn-sm btn-outline-secondary"><i class="fas fa-fw fa-trash-alt"></i></a>
+                        <a href='{{route('article.delete', $article->id)}}' class="btn btn-sm btn-outline-secondary"><i class="fas fa-fw fa-trash-alt"></i></a>
                 </td>
             </tr>
         @endforeach

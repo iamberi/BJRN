@@ -60,6 +60,12 @@ class ArticleController extends Controller
         //
     }
 
+    public function delete(Article $article)
+    {
+        return view ('article.delete', compact('article'));
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -99,6 +105,8 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+        Session::flash('message', 'Artikel wurde gelöscht!');
+        return redirect(route('article.index'));
     }
 }
