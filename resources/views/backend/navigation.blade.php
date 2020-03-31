@@ -1,11 +1,10 @@
-<div class="col sidebar d-none d-md-block">
-    <div class="card">
-        <div class="card-header">Navigation</div>
-        <div class="list-group list-group-flush">
-            <a href="{{route('article.index')}}" class="list-group-item list-group-item-action"> Artikelübersicht anzeigen</a>
-            <a href="{{route('article.create')}}" class="list-group-item list-group-item-action"> Artikel hinzufügen</a>
-            <a href="#" class="list-group-item list-group-item-action"> Artikel löschen</a>
-            <a href="#" class="list-group-item list-group-item-action"> Artikel anzeigen & bearbeiten</a>
-        </div>
-    </div>
-</div>
+
+<div class="col-sm-4 col-md-3 sidebar">
+                <div class="widget">
+                  <h5 class="widget-title font-alt">Navigation</h5>
+                  <ul class="icon-list">
+                    <li><a href="{{route('article.index')}}"> Artikelübersicht anzeigen</a></li>
+                    <li><a href="{{route('article.create')}}"> Artikel hinzufügen</a></li>
+                  </ul>
+                </div>
+              </div>
