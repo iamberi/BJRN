@@ -23,7 +23,7 @@ class FrontendController extends Controller
      public function check(Request $request)
      {
          if(Auth::check() && Auth::user()->authorizeRoles(['admin'])){
-             return redirect('/backend');
+             return redirect('article');
          }else{
              return redirect('/');
          }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="module bg-dark-30" data-background="assets/images/section-4.jpg">
+<section class="module bg-dark-30" data-background="{{asset('assets/images/shop/Header-img-1.jpg')}}">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">

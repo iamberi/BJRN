@@ -82,12 +82,12 @@
                       </li>
                   @endif
                 @else
-                  @if(Auth::user()->authorizeRoles('admin'))
+                  @if(Auth::user()->authorizeRoles('admin', 'user'))
                   <li class="nav-item">
-                  <a class="nav-link" href="{{ route('backend.index') }}">Admin-Bereich</a>
+                  <a class="nav-link" href="{{ route('article.index') }}">Meine Artikel</a>
                   </li>
                   @endif
-                  <li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">
                   {{ Auth::user()->name }} ({{ Auth::user()->roles()->first()->description }})</a>
                 <ul class="dropdown-menu">
                   <li> <a class="dropdown-item" href="{{ route('logout') }}"

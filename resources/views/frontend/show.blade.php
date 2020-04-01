@@ -22,7 +22,7 @@
                 <div class="row mb-20">
                   <div class="col-sm-12">
                     <div class="description">
-                      <p>{{$article->description}}</p>
+                      <p class="font-alt mb-0">{{$article->description}}</p>
                     </div>
                   </div>
                 </div>
