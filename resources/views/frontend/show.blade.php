@@ -4,6 +4,11 @@
 
 <section class="module">
           <div class="container">
+          <div class="widget">
+                <ul class="icon-list">
+                <li><a href="{{route('home')}}">Zurück zur Artikelübersicht</a></li>
+                </ul>
+            </div>
             <div class="row">
               <div class="col-sm-6 mb-sm-40"><a class="gallery" href="{{asset('assets/images/shop/product_grey-shirt.jpg')}}"><img src="{{asset('assets/images/shop/product_grey-shirt.jpg')}}" alt="Single Product Image"/></a>
               </div>
@@ -27,7 +32,7 @@
                   </div>
                 </div>
                 <div class="row mb-20">
-                  <div class="col-sm-8"><a class="btn btn-lg btn-block btn-round btn-b" href="#">Artikel anfragen</a></div>
+                  <div class="col-sm-8"><a class="btn btn-lg btn-block btn-round btn-b" href="{{route('frontend.contact')}}">Artikel anfragen</a></div>
                 </div>
                 <div class="row mb-20">
                   <div class="col-sm-12">

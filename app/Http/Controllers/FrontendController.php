@@ -19,6 +19,11 @@ class FrontendController extends Controller
      {
          return view('frontend.show', compact('article'));
      }
+  
+     public function contact()
+     {
+         return view('frontend.contact');
+     }
 
      public function check(Request $request)
      {
