@@ -32,11 +32,18 @@
                   </div>
                 </div>
                 <div class="row mb-20">
-                  <div class="col-sm-8"><a class="btn btn-lg btn-block btn-round btn-b" href="{{route('frontend.contact')}}">Artikel anfragen</a></div>
+                  <div class="col-sm-8">
+                  <a  class="btn btn-lg btn-block btn-round btn-b"
+                      href="mailto:{{__('Benutzer')}}: {{$article->user->email}}?subject=BJRN%20|%20Anfrage%20zu%20deinem%20Artikel:%20{{$article->article}}&amp;body=Infos%20zu%20deinem%20Artikel:%20Artikelname:%20{{$article->article}},%20Beschreibung:%20{{$article->description}},%20Preis:%20{{$article->price}}%20">
+                    Artikel anfragen
+                  </a>
+                  <!-- <a class="btn btn-lg btn-block btn-round btn-b" href="{{route('frontend.contact')}}">Artikel anfragen</a> -->
+                  </div>
                 </div>
                 <div class="row mb-20">
                   <div class="col-sm-12">
                     <div class="product_meta">{{__('Benutzer')}}: {{$article->user->name}} </a>
+                    <div class="product_meta">{{__('Mail Adresse')}}: {{$article->user->email}} </a>
                     </div>
                   </div>
                 </div>
