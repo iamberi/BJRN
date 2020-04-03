@@ -10,7 +10,7 @@
                 </ul>
             </div>
             <div class="row">
-              <div class="col-sm-6 mb-sm-40"><a class="gallery" href="{{asset('assets/images/shop/product_grey-shirt.jpg')}}"><img src="{{asset('images/' . $article->image)}}" alt="Single Product Image"/></a>
+              <div class="col-sm-6 mb-sm-40"><a class="gallery"><img src="{{asset('images/' . $article->image)}}" alt="Single Product Image"/></a>
               </div>
               <div class="col-sm-6">
                 <div class="row">
