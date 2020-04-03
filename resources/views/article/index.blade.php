@@ -29,6 +29,10 @@
         @foreach($articles->all() as $article)
             <tr>
                 <td>
+                  <img src="{{asset('images/' . $article->image)}}" width="100px">
+                </td>
+
+                <td>
                   <h5 class="product-title font-alt">{{$article->id}}</h5>
                 </td>
                 <td>

@@ -29,7 +29,7 @@
               <div class="col-sm-8 col-sm-offset-2">
                 <h4 class="font-alt mb-0" >Neuen Artikel hinzufügen</h4>
                 <hr class="divider-w mt-10 mb-20">
-                <form class="form" role="form" action="{{route('article.store')}}" method="post">
+                <form class="form" role="form" action="{{route('article.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                   <div class="form-group">
@@ -44,7 +44,10 @@
                   <label for="price">Preis</label>
                     <input type="text" class="form-control" id="price" name="price" placeholder='Preis'> 
                   </div>
-                 
+                  <div class="form-group">
+                  <label for="image">Bild</label>
+                    <input type="file" class="form-control" id="image" name="image" placeholder='Preis'> 
+                  </div>
                   <div class="form-group row mb-0">
                             
                             <button type="submit" class="btn btn-block btn-round btn-b">

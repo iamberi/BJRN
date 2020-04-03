@@ -36,17 +36,43 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $new_article = new Article();
+
+        $new_article->article = $request->input('article');
+        $new_article->description = $request->input('description');
+        $new_article->price = $request->input('price');
+        $new_article->user_id = $request->input('user_id');
+        //$new_article->image = $request->input(['article' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048']);
+/*
         $data = $request->validate([
             'article' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'user_id' => 'required |exists:users,id'
-        ]);
-       
+            'user_id' => 'required |exists:users,id',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);*/
+
+        if  ($request->hasfile('image')){
+            $image = $request->file('image');
+            $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path("images"), $new_name);
+            $new_article->image = $new_name;
+
+            $new_article->save();
+            $articles = Article::all();
+           // Article::create($data);
+
+            $request->session()->flash('message', 'Der Artikel wurde hinzugefügt.');
+            return redirect(route('article.index'))->with('articles', $articles);
+           // return redirect(route('article.index'))->with('path', $new_name);
+        }        
+       // $data->image = $new_name;
+        //return back()->with('success', 'Das Bild wurde hinzugefügt')->with('path', $new_name);
+       /*
         Article::create($data);
         $request->session()->flash('message', 'Der Artikel wurde hinzugefügt.');
-        return redirect(route('article.index'));
+        return redirect(route('article.index'));*/
     }
 
     /**
