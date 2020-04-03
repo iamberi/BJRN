@@ -16,7 +16,7 @@
                 <table class="table table-striped table-border checkout-table">
                   <tbody>
                     <tr>
-                      <th>Id</th>
+                      <th>Bild</th>
                       <th>Artikel</th>
                       <th>Beschreibung</th>
                       <th>Preis</th>
@@ -29,11 +29,7 @@
         @foreach($articles->all() as $article)
             <tr>
                 <td>
-                  <img src="{{asset('images/' . $article->image)}}" width="100px">
-                </td>
-
-                <td>
-                  <h5 class="product-title font-alt">{{$article->id}}</h5>
+                  <img src="{{asset('images/' . $article->image)}}" width="300px">
                 </td>
                 <td>
                   <h5 class="product-title font-alt">{{$article->article}}</h5>

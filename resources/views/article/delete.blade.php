@@ -3,7 +3,7 @@
 @section('content')
 
 
-<section class="module bg-dark-30 about-page-header" data-background="{{ asset('assets/images/about_bg.jpg')}}">
+<section class="module bg-dark-30 about-page-header" data-background="{{ asset('assets/images/shop/Header-img-4.jpg')}}">
     <div class="container">
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
@@ -37,7 +37,7 @@
                     <table class="table table-striped table-border checkout-table">
                     <tbody>
                     <tr>
-                      <th>Id</th>
+                      <th>Bild</th>
                       <th>Artikel</th>
                       <th>Beschreibung</th>
                       <th>Preis</th>
@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                 <td>
-                  <h5 class="product-title font-alt">{{$article->id}}</h5>
+                  <img src="{{asset('images/' . $article->image)}}" width="300px">
                 </td>
                 <td>
                   <h5 class="product-title font-alt">{{$article->article}}</h5>

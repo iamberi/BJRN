@@ -37,7 +37,7 @@
             @foreach($articles->all() as $article)
               <div class="col-sm-6 col-md-3 col-lg-3">
                 <div class="shop-item">
-                  <div class="shop-item-image"><img src="{{asset('assets/images/shop/product_grey-shirt.jpg')}}" alt="Accessories Pack"/>
+                  <div class="shop-item-image"> <img src="{{asset('images/' . $article->image)}}" alt="Accessories Pack"/>
                     <div class="shop-item-detail"><a class="btn btn-round btn-b" href="{{route('frontend.show', $article->id)}}"><span>Details</span></a></div>
                   </div>
                   <h4 class="shop-item-title font-alt"><a href="{{route('frontend.show', $article->id)}}">{{$article->article}}</a></h4>{{__('Preis')}}: {{$article->price}}
